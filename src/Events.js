@@ -51,12 +51,16 @@ export function createLink() {
    let clicked = false;
    
    link.addEventListener('click', function(e) {
-     if (!clicked) {
-       e.preventDefault();
-       this.textContent += ` ${this.href}`;
-       clicked = true;
-     }
-}
+      if (!clicked) {
+        e.preventDefault();
+        this.textContent += ` ${this.href}`;
+        clicked = true;
+      }
+      // При следующем клике переход произойдет автоматически
+    });
+    
+    document.body.appendChild(link);
+  }
 
 /*
    4. Создайте функцию createList(), которая сгенерирует следующую разметку и вставит ее в body:
